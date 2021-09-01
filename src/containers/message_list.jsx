@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Message from '../components/message';
 import { fetchMessages } from '../actions/index';
+import MessageForm from './message_form';
 
 class MessageList extends Component {
   componentWillMount() {
@@ -35,6 +36,7 @@ class MessageList extends Component {
             })
           }
         </div>
+        <MessageForm />
       </div>
     );
   }
