@@ -1,13 +1,11 @@
 import React from 'react';
 
 const Message = (props) => {
-  const { created_at, username, content } = props.message;
-  const time = new Date(created_at).toLocaleTimeString();
+  const { user, content } = props.message;
   return (
     <div>
       <div>
-        <h5>{username}</h5>
-        <p>{time}</p>
+        <h5>{user}</h5>
       </div>
       <p>{content}</p>
     </div>

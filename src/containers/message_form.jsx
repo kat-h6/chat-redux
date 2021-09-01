@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
 import { createMessage } from '../actions/index';
 
 class MessageForm extends Component {
@@ -19,16 +20,18 @@ class MessageForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.createMessage(this.props.selectedChannel, this.props.user, this.state.value)
+    this.props.createMessage(this.props.selectedChannel, this.props.user, this.state.value);
+    this.setState({ value: '' });
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           ref={(input) => { this.messageBox = input; }}
           type="text"
           className="form-control"
+          autoComplete="off"
           value={this.state.value}
           onChange={this.handleChange}
         />
@@ -44,10 +47,9 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    currentUser: state.currentUser,
+    user: state.user,
     selectedChannel: state.selectedChannel
   };
 }
 
-
-export default connect(mapDispatchToProps, mapStateToProps)(MessageForm);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageForm);
