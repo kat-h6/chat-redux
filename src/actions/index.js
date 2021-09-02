@@ -19,9 +19,9 @@ export function selectChannel(channel) {
   };
 }
 
-export function createMessage(channel, user, content) {
+export function createMessage(channel, author, content) {
   const url = `https://wagon-chat.herokuapp.com/${channel}/messages`;
-  const body = { user, content };
+  const body = { author, content };
   const promise = fetch(url, {
     method: 'POST',
     headers: {
