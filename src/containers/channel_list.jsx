@@ -17,7 +17,7 @@ class ChannelList extends Component {
 
   renderChannel = (channel) => {
     return (
-      <li key={channel} role="presentation" onClick={() => this.handleClick(channel)}>
+      <li key={channel} role="presentation" className={channel === this.props.selectedChannel ? 'active' : null} onClick={() => this.handleClick(channel)}>
         #{channel}
       </li>
     );
@@ -25,7 +25,7 @@ class ChannelList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="col-sm-5 channel-container">
         <h2>Redux Chat</h2>
         <ul>
           {this.props.channels.map(this.renderChannel)}

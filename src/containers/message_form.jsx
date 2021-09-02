@@ -27,15 +27,17 @@ class MessageForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
-          ref={(input) => { this.messageBox = input; }}
-          type="text"
-          className="form-control"
-          autoComplete="off"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <button type="submit">Send</button>
+        <div className="form-submit">
+          <input
+            ref={(input) => { this.messageBox = input; }}
+            type="text"
+            className="form-control"
+            autoComplete="off"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+          <button type="submit" className="btn btn-info">Send</button>
+        </div>
       </form>
     );
   }

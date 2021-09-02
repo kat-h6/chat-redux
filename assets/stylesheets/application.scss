@@ -1,12 +1,73 @@
 body {
   font-family: Helvetica;
 }
-.app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.body {
+  display: flex;
+  height: 100vh;
+  background-color: #E8F6EF;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.channel-container {
+  padding: 20px;
+  background-color: #B8DFD8;
+  h2 {
+    text-align: center;
+    font-size: 24px;
+  }
+  li {
+    list-style-type: none;
+    font-size: 16px;
+  }
+  li:hover {
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.channel-container > ul >li.active {
+  font-weight: 600;
+  color: black;
 }
 
 .channel-title {
-  font-weight: bold;
-  font-size: 24px;
+  h2 {
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
+.channel-content {
+  padding: 20px;
+}
+
+.message-container {
+  padding: 20px;
+}
+
+.message {
+  h5 {
+    font-weight: bold;
+  }
+  small {
+    position: relative;
+  }
+}
+
+.form-submit {
+  display: flex !important;
+  padding-top: 20px;
+  border-top: 1px solid grey;
 }

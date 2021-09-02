@@ -1,13 +1,12 @@
 import React from 'react';
 
 const Message = (props) => {
-  const { user, content } = props.message;
+  const { author, content, created_at } = props.message;
   return (
-    <div>
-      <div>
-        <h5>{user}</h5>
-      </div>
+    <div className="message">
       <p>{content}</p>
+      <p><strong>{created_at}</strong><br />
+        by <strong>{author}</strong></p>
     </div>
   );
 };
